@@ -1,1 +1,92 @@
+<!-- Filename: CN334-W04-JS-2026V1.html -->
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CN334 W04 — JS Form Validation Quiz (2026V1)</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Arial;margin:20px;line-height:1.45}
+    h1{font-size:18px;margin:0 0 10px}
+    .note{color:#555;font-size:13px;margin:0 0 12px}
+    pre{background:#f6f8fa;border:1px solid #e5e7eb;border-radius:10px;padding:10px;overflow:auto}
+    code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+    .bar{display:flex;gap:10px;align-items:center;margin:10px 0 14px}
+    button{padding:8px 10px;border-radius:10px;border:1px solid #d1d5db;background:#fff;cursor:pointer}
+    button:hover{background:#f3f4f6}
+    .key{display:none}
+    .key.show{display:block}
+    .tag{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid #e5e7eb;border-radius:999px;margin-left:8px;color:#444}
+  </style>
+</head>
+<body>
+  <h1>CN334 — JavaScript Form Validation Quiz (W04) <span class="tag">2026V1</span></h1>
+  <p class="note">เติมคำในช่องว่าง <b>________</b> ให้ถูกต้อง (10 ข้อ) — เน้น JS ล้วน</p>
+
+  <div class="bar">
+    <button id="show">Show Answer Key</button>
+    <button id="hide">Hide Answer Key</button>
+  </div>
+
+  <pre><code>// Q1: Required field (read value)
+let value = document.getElementById("username").________;
+if (value === "") alert("Username is required");
+
+// Q2: Prevent submit when invalid
+function validateForm() {
+  let email = document.getElementById("email").value;
+  if (email === "") { alert("Email required"); return ________; }
+}
+
+// Q3: Password min length 6
+let password = document.getElementById("password").value;
+if (password.length &lt; ______) alert("Password too short");
+
+// Q4: Email must contain "@"
+let email = document.getElementById("email").value;
+if (!email.________("@")) alert("Invalid email");
+
+// Q5: Number only (isNaN)
+let age = document.getElementById("age").value;
+if (isNaN(_______)) alert("Age must be a number");
+
+// Q6: Confirm password match
+let pass1 = document.getElementById("pass1").value;
+let pass2 = document.getElementById("pass2").value;
+if (pass1 ______ pass2) alert("Passwords do not match");
+
+// Q7: Checkbox checked
+let agree = document.getElementById("agree").________;
+if (!agree) alert("You must agree");
+
+// Q8: UI feedback (border red)
+let u = document.getElementById("username");
+if (u.value === "") u.style.border = "________";
+
+// Q9: trim before empty check
+let name = document.getElementById("name").value;
+if (name.________() === "") alert("Name required");
+
+// Q10: show error in div
+document.getElementById("error").________ = "Form invalid";</code></pre>
+
+  <pre class="key" id="key"><code>// ✅ Answer Key (All)
+Q1  value
+Q2  false
+Q3  6
+Q4  includes
+Q5  age
+Q6  !==
+Q7  checked
+Q8  2px solid red
+Q9  trim
+Q10 innerHTML</code></pre>
+
+  <script>
+    const key = document.getElementById("key");
+    document.getElementById("show").onclick = () => key.classList.add("show");
+    document.getElementById("hide").onclick = () => key.classList.remove("show");
+  </script>
+</body>
+</html>
 
